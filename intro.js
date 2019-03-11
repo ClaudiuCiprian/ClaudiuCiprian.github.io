@@ -1,20 +1,10 @@
-console.info("my first js")
-
-var name = "Claudiu"
-var employed = true;
-
-console.warn("employed");
-console.warn(employed);
-
-console.info("name:");
-console.info(name);
 
 function getWelcomeMsg() {
     return "Welcome to my site";
 }
 
 
-//first example
+
 function hideHomePage() {
     var el = document.getElementById('home-page');
     el.style.display = 'none';
@@ -22,15 +12,6 @@ function hideHomePage() {
 function showSkillsPage() {
     document.getElementById('skills-page').style.display = 'block';
 }
-function clickOnSkills() {
-    //hideHomepage
-    //showSkillpage
-    hidePage('home-page');
-    hidePage('skill-page');
-    hidePage('about-page');
-    showPage('languages-page');
-}
-//first example - end
 
 
 function getColor() {
