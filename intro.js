@@ -61,19 +61,24 @@ function hideAllPages() {
 
 
 initMenu();
+
+
 function showSKillls() {
    var skills = ['html', 'css', 'js'];
-   for (var i = 0; i < skills.length; i++) {
-       console.warn(i+1 + '.' + skills[i]);
+   console.warn('showskills', skill);
+       printSkill(skills[i], i);
+       
    }
-}
+
+   function printSkill(skill, index) {
+       console.info("#" + (index + 1) + " " + skill);
+   }
 
 showSKillls();
 
-function showSKillls() {
+function showSKillls() 
     var skills = ['html','css','js'];
     console.warn('showSkills',skills);
-    for(var i = 0; i < skills.length; i++) {
-        console.info(i + 1 + ". "+ skills[i]);
-    }
+
+    skills.forEach()
 }
