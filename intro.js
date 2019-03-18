@@ -66,19 +66,10 @@ initMenu();
 function showSKillls() {
    var skills = ['html', 'css', 'js'];
    console.warn('showskills', skill);
-       printSkill(skills[i], i);
+      skill.forEach(function(skill, index) {
+          console.info("#" + (index + 1) + " " + skill);
+      });
        
    }
 
-   function printSkill(skill, index) {
-       console.info("#" + (index + 1) + " " + skill);
-   }
-
-showSKillls();
-
-function showSKillls() 
-    var skills = ['html','css','js'];
-    console.warn('showSkills',skills);
-
-    skills.forEach()
-}
+   showSkillls();
