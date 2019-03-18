@@ -56,7 +56,7 @@ initMenu();
 
 
 function showSkillls() {
-   var skills = ['html', 'css', 'js'];
+   var skills = ['html', 'css', 'JavaScript'];
 
      var htmlSkills = skills.map(function(skill, index) {
           console.info("#" + (index + 1) + " " + skill);
