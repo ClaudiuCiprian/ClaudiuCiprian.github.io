@@ -3,16 +3,14 @@ function getWelcomeMsg() {
     return "Welcome to my site";
 }
 
-
-
 function hideHomePage() {
     var el = document.getElementById('home-page');
     el.style.display = 'none';
 }
+
 function showSkillsPage() {
     document.getElementById('skills-page').style.display = 'block';
 }
-
 
 function getColor() {
     var date = new Date();
@@ -29,14 +27,10 @@ function getColor() {
     var color = "blue"
     summaryElement.style.color = color;
 }
-function hidePage(page) {
-    var el = document.getElementById('home-page');
-    el.style.display = 'none';
-}
-function showPage(page) {
-    document.getElementById('skills-page').style.display = 'block';
-}
 
+function showPage(page) {
+    document.getElementById(page).style.display = 'block';
+}
 
 function initMenu() {
     var links = document.querySelectorAll("#top-menu-bar a");
@@ -46,9 +40,9 @@ function initMenu() {
 }
 
 function clickOnMenuItem () {
-    var pageId = this.getAttribute('data-page');
-    shawPage(pageId);
-  
+    var pageId = this.getAttribute('data-page');    
+    hideAllPages();
+    showPage(pageId);
 }
 
 function hideAllPages() {
@@ -58,19 +52,20 @@ function hideAllPages() {
     }
 }
 
-
-
 initMenu();
 
 
 function showSkillls() {
    var skills = ['html', 'css', 'js'];
-   console.warn('showskills', skill);
 
-     var p = skills.forEach(function(skill, index) {
+     var htmlSkills = skills.map(function(skill, index) {
           console.info("#" + (index + 1) + " " + skill);
+          return '<li>' + skill + '</li>';
       });
-      console.info(p);
+
+      var ul = document.querySelector('#skills-page ul');
+      console.warn(ul);
+      ul.innerHTML = htmlSkills.join('');
 }
 
-   showSkillls();
+showSkillls();
