@@ -63,13 +63,14 @@ function hideAllPages() {
 initMenu();
 
 
-function showSKillls() {
+function showSkillls() {
    var skills = ['html', 'css', 'js'];
    console.warn('showskills', skill);
-      skill.forEach(function(skill, index) {
+
+     var p = skills.forEach(function(skill, index) {
           console.info("#" + (index + 1) + " " + skill);
       });
-       
-   }
+      console.info(p);
+}
 
    showSkillls();
