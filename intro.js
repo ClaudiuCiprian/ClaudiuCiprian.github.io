@@ -36,3 +36,36 @@ function hidePage(page) {
 function showPage(page) {
     document.getElementById('skills-page').style.display = 'block';
 }
+
+
+function initMenu() {
+    var links = document.querySelectorAll("#top-menu-bar a");
+    for(var i = 0; i < links.length; i++) {
+        links[i].onclick = clickOnMenuItem
+    }
+}
+
+function clickOnMenuItem () {
+    var pageId = this.getAttribute('data-page');
+    shawPage(pageId);
+  
+}
+
+function hideAllPages() {
+    var pages = document.querySelectorAll('.page');
+    for(var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+    }
+}
+
+
+
+initMenu();
+function showSKillls() {
+   var skills = ['html', 'css', 'js'];
+   for (var i = 0; i < skills.length; i++) {
+       console.warn(i+1 + '.' + skills[i]);
+   }
+}
+
+showSKillls();
