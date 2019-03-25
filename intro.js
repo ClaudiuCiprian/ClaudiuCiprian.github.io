@@ -34,20 +34,20 @@ function showPage(page) {
 
 function initMenu() {
     var links = document.querySelectorAll("#top-menu-bar a");
-    for(var i = 0; i < links.length; i++) {
+    for (var i = 0; i < links.length; i++) {
         links[i].onclick = clickOnMenuItem
     }
 }
 
-function clickOnMenuItem () {
-    var pageId = this.getAttribute('data-page');    
+function clickOnMenuItem() {
+    var pageId = this.getAttribute('data-page');
     hideAllPages();
     showPage(pageId);
 }
 
 function hideAllPages() {
     var pages = document.querySelectorAll('.page');
-    for(var i = 0; i < pages.length; i++) {
+    for (var i = 0; i < pages.length; i++) {
         pages[i].style.display = 'none';
     }
 }
@@ -56,16 +56,19 @@ initMenu();
 
 
 function showSkillls() {
-   var skills = ['html', 'css', 'JavaScript'];
+    var allEndorsements = [8, 12, 19];
+    var skills = ['html', 'css', 'js', 'node js'];
 
-     var htmlSkills = skills.map(function(skill, index) {
-          console.info("#" + (index + 1) + " " + skill);
-          return '<li>' + skill + '</li>';
-      });
+    var htmlSkills = skills.map(function (skill, index) {
+        var endorsements = ' <span class="endorcements">(' + allEndorsements[index] + ")</span>";
+        return '<li>' + skill.toLocaleUpperCase() + endorsements + '</li>';
+    });
 
-      var ul = document.querySelector('#skills-page ul');
-      console.warn(ul);
-      ul.innerHTML = htmlSkills.join('');
+    var ul = document.querySelector('#skills-page ul');
+    ul.innerHTML = htmlSkills.join('');
 }
+
+hideAllPages();
+showPage('skills-page');
 
 showSkillls();
